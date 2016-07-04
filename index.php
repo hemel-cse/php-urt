@@ -1,8 +1,8 @@
 <?php 
 require ('functions.php');
 
-$host = '45.119.120.2';
-$port = 27960;
+$host = '';
+$port = ;
 
 $data = getUrtServerStatus($host, $port, 15);
 $maxClients = $data['info']['sv_maxclients'];
