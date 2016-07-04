@@ -13,9 +13,10 @@ $port = 27960;
 $data = getUrtServerStatus($host, $port, 15);
 $maxClients = $data['info']['sv_maxclients'];
 $totalPlayers = count($data['players']);
+$mapName = $data['info']['mapname'];
 ?>
 
-<title><?php echo $totalPlayers; ?>/<?php echo $maxClients; ?></title>
+<title> <?php echo "$totalPlayers/$maxClients - $mapName?></title>
 <meta charset="utf-8">
 
 <p>Currently playing: <?php echo $totalPlayers; ?>/<?php echo $maxClients; ?></p>
