@@ -19,6 +19,7 @@ $totalPlayers = count($data['players']);
 <meta charset="utf-8">
 
 <p>Currently playing: <?php echo $totalPlayers; ?>/<?php echo $maxClients; ?></p>
+<p>Map Name: <?php echo $data['info']['mapname']?></p>
 
 <?php if(count($data['players'])): ?>
 <table>
