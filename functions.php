@@ -61,29 +61,29 @@ function writeInSocketConnection($socket, $data){
 
 
 function parsePlayers($raw){
-	$players = array_filter(array_slice($raw, 2));
-	$players = array_map(function($player){
-		$player = explode(' ',$player);
+    $players = array_filter(array_slice($raw, 2));
+    $players = array_map(function($player){
+        $player = explode(' ',$player);
 
-		return [
-			'name' => $player[2],
-			'ping' => $player[1],
-			'score' => $player[0]
-		];
-	}, $players);
+        return [
+            'name' => $player[2],
+            'ping' => $player[1],
+            'score' => $player[0]
+        ];
+    }, $players);
 
-	return $players;
+    return $players;
 }
 
 function parseInfo($raw){
-	//remove the first \
-	$info = array_slice(explode('\\', $raw[1]), 1);
-	$info = array_chunk($info, 2);
+    //remove the first \
+    $info = array_slice(explode('\\', $raw[1]), 1);
+    $info = array_chunk($info, 2);
 
-	$info = array_reduce($info, function($carry, $pair) {
+    $info = array_reduce($info, function($carry, $pair) {
         $carry[$pair[0]] = $pair[1];
         return $carry;
-	}, []);
+    }, []);
 
-	return $info;
+    return $info;
 }
