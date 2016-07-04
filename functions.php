@@ -1,7 +1,7 @@
 <?php
 
 function getUrtServerStatus($host, $port, $timeout){
-    $socket = createUdpSocketConnection($host, $port, 15);
+    $socket = createUdpSocketConnection($host, $port, $timeout);
     $data = writeInSocketConnection($socket, "\377\377\377\377getstatus\n");
 
     $data = explode("\n", $data);
