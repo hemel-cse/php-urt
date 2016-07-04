@@ -16,7 +16,7 @@ $totalPlayers = count($data['players']);
 $mapName = $data['info']['mapname'];
 ?>
 
-<title> <?php echo "$totalPlayers/$maxClients - $mapName?></title>
+<title> <?php echo "$totalPlayers/$maxClients - $mapName"; ?></title>
 <meta charset="utf-8">
 
 <p>Currently playing: <?php echo $totalPlayers; ?>/<?php echo $maxClients; ?></p>
