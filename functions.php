@@ -6,8 +6,8 @@ function getUrtServerStatus($host, $port, $timeout){
 
     $data = explode("\n", $data);
 
-	$players = parsePlayers($data);
-	$info = parseInfo($data);
+    $players = parsePlayers($data);
+    $info = parseInfo($data);
 
     return compact('players', 'info');
 }
