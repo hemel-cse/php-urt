@@ -7,8 +7,6 @@
         }
     ],
     "require": {
-        "hoa/socket": "~1.0",
-        "clue/socket-raw": "^1.2",
         "symfony/http-foundation": "^3.1"
     }
 }
