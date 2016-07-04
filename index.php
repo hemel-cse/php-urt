@@ -11,11 +11,14 @@ $host = '45.119.120.2';
 $port = 27960;
 
 $data = getUrtServerStatus($host, $port, 15);
+$maxClients = $data['info']['sv_maxclients'];
+$totalPlayers = count($data['players']);
 ?>
 
+<title><?php echo $totalPlayers; ?>/<?php echo $maxClients; ?></title>
 <meta charset="utf-8">
 
-<p>Currently playing: 20/<?php echo count($data['players']); ?></p>
+<p>Currently playing: <?php echo $totalPlayers; ?>/<?php echo $maxClients; ?></p>
 
 <?php if(count($data['players'])): ?>
 <table>

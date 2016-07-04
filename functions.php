@@ -80,12 +80,10 @@ function parseInfo($raw){
 	$info = array_slice(explode('\\', $raw[1]), 1);
 	$info = array_chunk($info, 2);
 
-	$info = array_map(function($pair) {
-		return [
-			'name' => $pair[0],
-			'value' => $pair[1]
-		];
-	}, $info);
+	$info = array_reduce($info, function($carry, $pair) {
+        $carry[$pair[0]] = $pair[1];
+        return $carry;
+	}, []);
 
 	return $info;
 }
